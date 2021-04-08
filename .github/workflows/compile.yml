@@ -43,7 +43,7 @@ jobs:
         run: |
           mkdir ${GITHUB_WORKSPACE}/llvm_build
           cd ${GITHUB_WORKSPACE}/llvm_build
-          cmake ../llvm-project-${{ matrix.node }}/llvm
+          cmake ../llvm-project-${{ matrix.node }}/llvm -DLLVM_ENABLE_PROJECTS=lld
       - name: Compile LLVM
         run: |
           cd ${GITHUB_WORKSPACE}/llvm_build
